@@ -1,7 +1,7 @@
 # invoiceninja-docker for localhost
-This project simpflifies the usage of [invoiceninja](https://github.com/invoiceninja/invoiceninja) leveraging [Docker](http://docker.com/) while maintaining a high level of security. 
+This project simplifies the usage of [invoiceninja](https://github.com/invoiceninja/invoiceninja) leveraging [Docker](http://docker.com/) while maintaining a high level of security. 
 
-Invoiceninja is a great tool for business owners to process invoices. However it's implemented as a webservice, which could exposes clients' data to the Internet in case of security issues. Since security issues are not unlikely, this project avoids security problems by running invoiceninja on localhost.
+Invoiceninja is a great tool for business owners to process invoices. However it's implemented as a webservice, which could expose clients' data to the Internet in case of security issues. Since security issues are not unlikely, this project avoids security problems by running invoiceninja only on localhost.
 
 **Note that this is still beta quality and not for production use yet!**
 
