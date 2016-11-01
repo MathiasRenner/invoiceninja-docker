@@ -24,28 +24,28 @@ How to setup
 ```
 wget -O docker-compose.yml https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/docker-compose.yml?token=ACRG-IF8QjuVQVB_w2tcr-cNlmr2NW96ks5YIddewA%3D%3D
 ```
-- Pulls the necessary files to your machine by running
+- Next, pull the necessary files to your machine by running
+```
+docker-compose up
+```
+- When all images have been pulled, press `STRG + C` to cancel the docker-compose deployment. When this has been finished, run
 ```
 docker-compose up -d
 ```
-- After some minutes, you should see 4 new containers running when executing `docker ps`. In that case invoiceninja is up and running.
-- Run `docker ps` and copy the `CONTAINER ID` of the container with the NAME `invoiceninja-docker_web_1`
-- `docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  <CONTAINER ID>`
-
-- Open invoiceninja in firefox with
+- Now, you should see 4 new containers running when executing `docker ps`. In that case invoiceninja is up and running.
+- Now, let's open it in the Browser. First, we need the container's IP address. Run `docker ps` and copy the `CONTAINER ID` of the container with the NAME `invoiceninja-docker_web_1`. Insert the copied `CONTAINER ID` into the following command and run it:
 ```
-docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 58a2d7bcd4ac | xargs firefox >>/dev/null &
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  <CONTAINER ID>
 ```
 
+- Insert the copied `CONTAINER ID` into the following command and run it. It will open invoiceninja in firefox.
+```
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <CONTAINER ID> | xargs firefox >>/dev/null &
+```
+- Congrats! Your local instance of invoiceninja is running! See the next section to see how to start and stop it.
 
 Usage
 --------------
-
-### Stop invoiceninja
-Make sure you are in the same repository where the `docker-compose.yml` resides and run
-```
-docker-compose pause
-```
 
 ### Start invoiceninja
 - Make sure you are in the same repository where the `docker-compose.yml` resides and run
@@ -61,6 +61,11 @@ docker-compose unpause
 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 58a2d7bcd4ac | xargs firefox >>/dev/null &
 ```
 
+### Stop invoiceninja
+Make sure you are in the same repository where the `docker-compose.yml` resides and run
+```
+docker-compose pause
+```
 
 TODOs
 ------------
