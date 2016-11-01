@@ -20,13 +20,21 @@ Drawbacks
 How to setup
 ---------------
 - Setup `docker` and `docker-compose` following Docker's official docs
-- Download the `docker-compose.yml` from this repository
+- Download the `docker-compose.yml` from this repository by running
 ```
-wget https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/docker-compose.yml?token=ACRG-IF8QjuVQVB_w2tcr-cNlmr2NW96ks5YIddewA%3D%3D
+wget -O docker-compose.yml https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/docker-compose.yml?token=ACRG-IF8QjuVQVB_w2tcr-cNlmr2NW96ks5YIddewA%3D%3D
 ```
-- Make sure you are in the same repository where the resides and run
+- Pulls the necessary files to your machine by running
 ```
-docker-compose up
+docker-compose up -d
+```
+- After some minutes, you should see 4 new containers running when executing `docker ps`. In that case invoiceninja is up and running.
+- Run `docker ps` and copy the `CONTAINER ID` of the container with the NAME `invoiceninja-docker_web_1`
+- `docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  <CONTAINER ID>`
+
+- Open invoiceninja in firefox with
+```
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 58a2d7bcd4ac | xargs firefox >>/dev/null &
 ```
 
 
@@ -34,18 +42,19 @@ Usage
 --------------
 
 ### Stop invoiceninja
-
+Make sure you are in the same repository where the `docker-compose.yml` resides and run
 ```
 docker-compose pause
 ```
 
 ### Start invoiceninja
-- Unpause invoiceninja with
+- Make sure you are in the same repository where the `docker-compose.yml` resides and run
+
 ```
 docker-compose unpause
 ```
 - Run `docker ps` and copy the `CONTAINER ID` of the container with the NAME `invoiceninja-docker_web_1`
-- `docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  5b8380f7d5e9`
+- `docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  <CONTAINER ID>`
 
 - Open invoiceninja in firefox with
 ```
