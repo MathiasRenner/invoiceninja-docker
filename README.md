@@ -33,14 +33,9 @@ docker-compose up
 docker-compose up -d
 ```
 - Now, you should see 4 new containers running when executing `docker ps`. In that case invoiceninja is up and running.
-- Now, let's open it in the Browser. First, we need the container's IP address. Run `docker ps` and copy the `CONTAINER ID` of the container with the NAME `invoiceninja-docker_web_1`. Insert the copied `CONTAINER ID` into the following command and run it:
+- Now, let's open it in Firefox. Run `docker ps` and copy the `CONTAINER ID` of the container with the name `invoiceninja-docker_web_1`. Insert the copied `CONTAINER ID` into the following command and run it.
 ```
-docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  <CONTAINER ID>
-```
-
-- Insert the copied `CONTAINER ID` into the following command and run it. It will open invoiceninja in firefox.
-```
-docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <CONTAINER ID> | xargs firefox >>/dev/null &
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  <CONTAINER ID> | awk '{print "http://"$1}' | xargs xdg-open >> /dev/null &
 ```
 - Congrats! Your local instance of invoiceninja is running! See the next section to see how to start and stop it.
 
@@ -53,12 +48,12 @@ Usage
 ```
 docker-compose unpause
 ```
-- Run `docker ps` and copy the `CONTAINER ID` of the container with the NAME `invoiceninja-docker_web_1`
+- Run `docker ps` and copy the `CONTAINER ID` of the container with the name `invoiceninja-docker_web_1`
 - `docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  <CONTAINER ID>`
 
 - Open invoiceninja in firefox with
 ```
-docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 58a2d7bcd4ac | xargs firefox >>/dev/null &
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <CONTAINER ID> | xargs firefox >>/dev/null &
 ```
 
 ### Stop invoiceninja
