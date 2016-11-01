@@ -19,7 +19,7 @@ Drawbacks
 
 How to setup
 ---------------
-- Setup `docker` and `docker-compose` following Docker's official docs
+- Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6.
 - Download the `docker-compose.yml` from this repository by running
 ```
 wget -O docker-compose.yml https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/docker-compose.yml?token=ACRG-IF8QjuVQVB_w2tcr-cNlmr2NW96ks5YIddewA%3D%3D
