@@ -1,5 +1,5 @@
 # invoiceninja-docker for localhost
-This project simplifies the usage of [invoiceninja](https://github.com/invoiceninja/invoiceninja) leveraging [Docker](http://docker.com/) while maintaining a high level of security. 
+This project simplifies the usage of [invoiceninja](https://github.com/invoiceninja/invoiceninja) leveraging [Docker](http://docker.com/) while maintaining a high level of security.
 
 Invoiceninja is a great tool for business owners to process invoices. However it's implemented as a webservice, which could expose clients' data to the Internet in case of security issues. Since security issues are not unlikely, this project avoids security problems by running invoiceninja only on localhost.
 
@@ -7,9 +7,10 @@ Invoiceninja is a great tool for business owners to process invoices. However it
 
 Benefits of this setup
 -----------
-- Invoiceninja will run only on localhost, and accessible only from localhost.
-- Invoiceninja can be started and stopped when needed within seconds.
-- Invoiceninja will be able to send emails as long localhost is connected to the Internet.
+- Invoiceninja will run only on localhost, and be accessible only from localhost.
+- Invoiceninja can be started and stopped when needed within milliseconds.
+- Invoiceninja will be able to send emails and invoices as long localhost is connected to the Internet.
+- Backups are as easy as copying one folder.
 
 
 Drawbacks
@@ -48,12 +49,10 @@ Usage
 ```
 docker-compose unpause
 ```
-- Run `docker ps` and copy the `CONTAINER ID` of the container with the name `invoiceninja-docker_web_1`
-- `docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  <CONTAINER ID>`
 
 - Open invoiceninja in firefox with
 ```
-docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <CONTAINER ID> | xargs firefox >>/dev/null &
+docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' invoiceninjadocker_web_1 | xargs firefox >>/dev/null &
 ```
 
 ### Stop invoiceninja
@@ -62,8 +61,26 @@ Make sure you are in the same repository where the `docker-compose.yml` resides 
 docker-compose pause
 ```
 
+Instead of `pause` and `unpause`, you can also use `docker-compose down` and `docker-compose up -d`.
+
+
+Backup
+-----
+All settings are stored in the database, which resides in the folder `database`. If you copy this folder to a any different location, you have a backup.
+
+
+Shell alias
+-----------
+These instructions help to start and stop Invoiceninja with just `instart` and `instop`
+- Go to the configuration file of your shell
+
+
+Troublehooting
+-------------
+- If you see a "Bad Gateway" in your browser instead of invoice ninja, wait some seconds and try again. If the error remains, a clean up with the following command probably resolves the problem: `docker rm -fv $(docker ps -aq)`.  *Note* that this command removes all containers and volumes on your machine!
+
+
 TODOs
 ------------
-- Automate start & stop with scripts
-- Implement/automate backup functionality
-- Test import/export functions, see https://github.com/invoiceninja/invoiceninja/issues/1126
+- Automate start & stop with shell alias
+- Hide output of "xargs firefox >>/dev/null &" better
