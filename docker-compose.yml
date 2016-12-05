@@ -13,7 +13,7 @@ services:
      - ./database:/var/lib/mysql
 
   app:
-    image: invoiceninja/invoiceninja:2.8
+    image: invoiceninja/invoiceninja
     links:
       - db:mysql
     environment:
