@@ -69,16 +69,17 @@ How to start and stop it
 
 ### Stop invoiceninja
 Make sure you are in the same repository where the `docker-compose.yml` resides and run
-  ```
+ 
+ ```
   docker-compose down
   ```
 
-Instead of `up -d` and `down`, you can also use `unpause` and `pause`.
+**Note:** It's much fast if you use `unpause` and `pause` instead of `up -d` and `down`.
 
 
 Backup
 -----
-All settings are stored in the database, which resides in the folder `database`. If you copy this folder to a any different location, you have a backup.
+All settings for InvoiceNinja are stored in the database, which resides in the folder `invoiceninja-docker/database`. If you copy this folder to a any different location, you have a backup.
 
 
 Troublehooting
@@ -89,4 +90,4 @@ Troublehooting
 TODOs
 ------------
 - Automate start & stop with shell alias
-- Hide output of "xargs firefox >>/dev/null &" better
+- Hide output of "xargs firefox >>/dev/null &" in a better way
