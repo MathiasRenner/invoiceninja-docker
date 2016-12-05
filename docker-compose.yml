@@ -17,7 +17,7 @@ services:
     links:
       - db:mysql
     environment:
-      APP_DEBUG: 1
+      #APP_DEBUG: 1
       DB_USERNAME: root
       DB_PASSWORD: pwd
     volumes:
