@@ -31,8 +31,6 @@ services:
       - app
     links:
       - app
-    ports:
-      - 80
 
 #  cron:
 #    image: invoiceninja/invoiceninja:2.8
