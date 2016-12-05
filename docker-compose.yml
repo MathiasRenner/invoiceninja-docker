@@ -1,6 +1,6 @@
 version: "2"
 volumes:
-  htdocs: 
+  htdocs:
     driver: local
 
 services:
@@ -32,7 +32,7 @@ services:
     links:
       - app
     ports:
-      - 8080:80
+      - 80
 
 #  cron:
 #    image: invoiceninja/invoiceninja:2.8
