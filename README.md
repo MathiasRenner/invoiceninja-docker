@@ -70,7 +70,7 @@ How to start and stop it
 ### Stop invoiceninja
 Make sure you are in the same repository where the `docker-compose.yml` resides and run
  
- ```
+  ```
   docker-compose down
   ```
 
