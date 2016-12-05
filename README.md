@@ -20,59 +20,65 @@ Drawbacks
 
 How to setup
 ---------------
-- Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6.
+- Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6. Also make sure you have `git` installed.
 - Download the `docker-compose.yml` from this repository by running
-```
-wget -O docker-compose.yml https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/docker-compose.yml?token=ACRG-IF8QjuVQVB_w2tcr-cNlmr2NW96ks5YIddewA%3D%3D
-```
+
+  ```
+  git@github.com:MathiasRenner/invoiceninja-docker.git
+  ```
+- Change into the cloned directory with 
+
+  ```
+  cd invoiceninja-docker
+  ```
+  
 - Next, pull the necessary files to your machine by running
-```
-docker-compose up
-```
-- When all images have been pulled, press `STRG + C` to cancel the docker-compose deployment. When this has been finished, run
-```
-docker-compose up -d
-```
+
+  ```
+  docker-compose pull
+  ```
+- When this has been finished, run
+
+  ```
+  docker-compose up -d
+  ```
 - Now, you should see 4 new containers running when executing `docker ps`. In that case invoiceninja is up and running.
-- Now, let's open it in Firefox. Run `docker ps` and copy the `CONTAINER ID` of the container with the name `invoiceninja-docker_web_1`. Insert the copied `CONTAINER ID` into the following command and run it.
-```
-docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  <CONTAINER ID> | awk '{print "http://"$1}' | xargs xdg-open >> /dev/null &
-```
+- Now, let's open it in Firefox. Run
+
+  ```
+  docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' invoiceninja-docker_web_1 | awk '{print "http://"$1}' | xargs xdg-open >> /dev/null &
+  ```
 - Congrats! Your local instance of invoiceninja is running! See the next section to see how to start and stop it.
 
-Usage
+
+How to start and stop it
 --------------
 
 ### Start invoiceninja
 - Make sure you are in the same repository where the `docker-compose.yml` resides and run
 
-```
-docker-compose unpause
-```
+  ```
+  docker-compose up -d
+  ```
 
 - Open invoiceninja in firefox with
-```
-docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' invoiceninjadocker_web_1 | xargs firefox >>/dev/null &
-```
+
+  ```
+  docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' invoiceninja-docker_web_1 | awk '{print "http://"$1}' | xargs xdg-open >> /dev/null &
+  ```
 
 ### Stop invoiceninja
 Make sure you are in the same repository where the `docker-compose.yml` resides and run
-```
-docker-compose pause
-```
+  ```
+  docker-compose down
+  ```
 
-Instead of `pause` and `unpause`, you can also use `docker-compose down` and `docker-compose up -d`.
+Instead of `up -d` and `down`, you can also use `unpause` and `pause`.
 
 
 Backup
 -----
 All settings are stored in the database, which resides in the folder `database`. If you copy this folder to a any different location, you have a backup.
-
-
-Shell alias
------------
-These instructions help to start and stop Invoiceninja with just `instart` and `instop`
-- Go to the configuration file of your shell
 
 
 Troublehooting
