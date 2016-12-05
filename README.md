@@ -21,10 +21,10 @@ Drawbacks
 How to setup
 ---------------
 - Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6. Also make sure you have `git` installed.
-- Download the `docker-compose.yml` from this repository by running
+- Clone this repo to your machine:
 
   ```
-  git@github.com:MathiasRenner/invoiceninja-docker.git
+  git clone git@github.com:MathiasRenner/invoiceninja-docker.git
   ```
 - Change into the cloned directory with 
 
@@ -77,10 +77,10 @@ How to start and stop it
  **Note:** It's much faster if you use `unpause` and `pause` instead of `up -d` and `down`.
 
 
-Backup
+Backup & Restore
 -----
-All settings for InvoiceNinja are stored in the database, which resides in the folder `invoiceninja-docker/database`. If you copy this folder to a any different location, you have a backup.
-
+- Backup: All settings for InvoiceNinja are stored in the database, which resides in the folder `invoiceninja-docker/database`. If you copy this folder to a any different location, you have a backup.
+- Restore: The only way to restore all settings is to restore the folder `database` – which is easy and fast.
 
 Troublehooting
 -------------
