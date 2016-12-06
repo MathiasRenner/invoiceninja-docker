@@ -90,6 +90,7 @@ Troublehooting
 TODOs
 ------------
 - Automate start & stop with shell alias or shell function in `~/.bashrc`, such that the user only types `instart` and `instop`. e.g.:
+
   ```
   function instart () {
     echo Starting InvoiceNinja...;
@@ -97,4 +98,5 @@ TODOs
     docker inspect --format "\{\{range .NetworkSettings.Networks\}\}\{\{.IPAddress\}\}\{\{end\}\}" invoiceninjadocker_web_1 | awk '{print http://}' | xargs xdg-open >> /dev/null &
   }
   ```
+
 - Hide output of "xargs firefox >>/dev/null &" in a better way
