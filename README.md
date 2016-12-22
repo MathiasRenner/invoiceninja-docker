@@ -44,8 +44,10 @@ Start & stop
 
 Backup & Restore
 ----------------
-- Backup: All settings for InvoiceNinja are stored in the database, which resides in the folder `invoiceninja-docker/database`. If you copy this folder to a any different location, you have a backup.
-- Restore: The only way to restore all settings is to restore the folder `database` – which is easy and fast. The backup/restore options inside InvoiceNinja don't cover all settings.
+To simplify backup, I recommend to apply a `sudo chmod -R 777` on the `database` folder within `invoiceninja-docker`. This folder is created after the first start of InvoiceNinja. Afterwards, backup and restore as follows:
+
+- **Backup**: All settings for InvoiceNinja are stored in the database, which resides in the folder `invoiceninja-docker/database`. If you copy this folder to a any different location, you have a backup.
+- **Restore**: The only way to restore all settings is to restore the folder `database` – which is easy and fast. The backup/restore options inside InvoiceNinja don't cover all settings.
 
 
 Troublehooting
