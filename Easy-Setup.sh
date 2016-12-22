@@ -12,4 +12,4 @@ echo "alias instart='docker-compose -f $(pwd)/docker-compose.yml up -d && xdg-op
 echo "alias instop='docker-compose -f $(pwd)/docker-compose.yml stop'" >> ~/.bashrc
 echo OK
 source ~/.bashrc
-echo -e "\e[1mSetup finished! Next, close this terminal and open a new one. Run 'instart' to start InvoiceNinja. \n Afterwards, your browser will show "Bad Gateway". Just wait 10 seconds and refresh the browser.\e[0m"
+echo -e "\e[1mSetup finished! Next, close this terminal and open a new one. Run 'instart' to start InvoiceNinja. \nYour browser will automatically start. Wait 10 seconds and refresh the page. Have fun!\e[0m"
