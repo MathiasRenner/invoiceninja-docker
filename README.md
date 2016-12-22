@@ -18,9 +18,17 @@ Drawbacks
 - The client portal of InvoiceNinja will not work since it runs on localhost. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
 
 
-How to setup
+Prerequisites
 ---------------
 - Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6. Also make sure you have `git` installed.
+
+Easy Setup
+---------------
+
+
+
+Manual Setup
+---------------
 - Clone this repo to your machine:
 
   ```
@@ -45,29 +53,21 @@ How to setup
   Creating invoiceninjadocker_web_1
   ```
 
-- Finally, open InvoiceNinja in Firefox at `http://localhost:8080/`. Congrats! Your local instance of InvoiceNinja is running! See the next section to see how to start and stop it.
+- Now, open InvoiceNinja in Firefox at `http://localhost:8080/`. Congrats! Your local instance of InvoiceNinja is running!
+
+- Finally, run the following lines to simplify starting and stopping InvoiceNinja:
+
+  ```
+  echo "alias instart='docker-compose -f $(pwd)/docker-compose.yml up -d && xdg-open http://localhost:8080/'" >> ~/.bashrc
+  echo "alias instop='docker-compose -f $(pwd)/docker-compose.yml stop'" >> ~/.bashrc
+  source ~/.bashrc
+  ```
 
 
 How to start and stop it
 --------------
-
-### Start InvoiceNinja
-- Make sure you are in the same repository where the `docker-compose.yml` resides and run
-
-  ```
-  docker-compose up -d
-  ```
-
-- Open InvoiceNinja in firefox at `http://localhost:8080/`
-
-### Stop InvoiceNinja
-- Make sure you are in the same repository where the `docker-compose.yml` resides and run
-
-  ```
-  docker-compose down
-  ```
-
- **Note:** It's much faster if you use `unpause` and `pause` instead of `up -d` and `down`.
+- To start InvoiceNinja, just run `instart`
+- To stop it: `instop`
 
 
 Backup & Restore
@@ -78,9 +78,4 @@ Backup & Restore
 
 Troublehooting
 -------------
-- If you see a "Bad Gateway" in your browser instead of invoice ninja, wait some seconds and try again. If the error remains, a clean up with the following command probably resolves the problem: `docker rm -fv $(docker ps -aq)`.  *Note* that this command removes all containers and volumes on your machine!
-
-
-TODOs
-------------
-- Automate start & stop with desktop icon for Ubuntu
+If you see a "Bad Gateway" in your browser instead of invoice ninja, wait some seconds and try again. The service might need some more time to be up and running. If the error remains, a clean up with the following command probably resolves the problem: `docker rm -fv $(docker ps -aq)`.  *Note* that this command removes all containers and volumes on your machine!
