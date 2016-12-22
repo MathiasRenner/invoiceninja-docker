@@ -11,4 +11,5 @@ echo -e "\e[100mStep 4/4 \e[44m Adding Bash Aliases to simplify starting and sto
 echo "alias instart='docker-compose -f $(pwd)/docker-compose.yml up -d && xdg-open http://localhost:8080/'" >> ~/.bashrc
 echo "alias instop='docker-compose -f $(pwd)/docker-compose.yml stop'" >> ~/.bashrc
 source ~/.bashrc
-echo -e "\e[1mSetup finished! Now, just run 'instart' to start InvoiceNinja. Afterwards, your browser will show "Bad Gateway". Just wait 10 seconds and refresh the browser.\e[0m"
+echo -e "\e[1mSetup finished! Next, close this terminal and open a new one. Run 'instart' to start InvoiceNinja. \n 
+Afterwards, your browser will show "Bad Gateway". Just wait 10 seconds and refresh the browser.\e[0m"
