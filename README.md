@@ -5,6 +5,9 @@ InvoiceNinja is a great tool for business owners to process invoices. However it
 
 **Note that this is still beta quality and not for production use yet!**
 
+This has been successfully tested on Ubuntu.
+
+
 Benefits of this setup
 -----------
 - **Security:** InvoiceNinja will run only on localhost without being accessible from any other machine.
@@ -25,7 +28,7 @@ Prerequisites
 
 Easy Setup
 ---------------
-You can install everything with just the following command:
+You can install everything with just the following command. *Note:* You want to run the command inside a folder where InvoiceNinja should be downloaded to.
 
 ```
 curl -s https://gist.githubusercontent.com/MathiasRenner/69e6bbb274e5e6a8b759cb7e21f20b9f/raw/91784ac3a1082dae83f9e5f6580645af63dc846d/install.sh | bash
@@ -49,3 +52,4 @@ Backup & Restore
 Troublehooting
 -------------
 - **Bad Gateway**: If you see a "Bad Gateway" in your browser instead of the InvoiceNinja interface, wait some seconds and try again. The service might need some more time to be up and running. If the error remains, a clean up with the following command probably resolves the problem: `docker rm -fv $(docker ps -aq)`.  *Note* that this command removes all containers and volumes on your machine!
+- **Cannot connect to the Docker daemon.** Make sure you have added your Linux user to the Docker group as described in the Docker docs. On Ubuntu, this issue is fixed by `sudo usermod -aG docker $USER`
