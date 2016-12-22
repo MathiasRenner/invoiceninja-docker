@@ -8,7 +8,7 @@ echo OK
 echo -e "\e[100mStep 3/4 \e[44m Pulling neccessary Docker images...\e[0m"
 docker-compose pull
 echo -e "\e[100mStep 4/4 \e[44m Adding Bash Aliases to simplify starting and stopping...\e[0m"
-echo "alias instart='docker-compose -f $(pwd)/docker-compose.yml up -d && xdg-open http://localhost:8080/'" >> ~/.bashrc
+echo "alias instart='docker-compose -f $(pwd)/docker-compose.yml up -d && xdg-open http://localhost:8080/ >>/dev/null'" >> ~/.bashrc
 echo "alias instop='docker-compose -f $(pwd)/docker-compose.yml stop'" >> ~/.bashrc
 echo OK
 . ~/.bashrc
