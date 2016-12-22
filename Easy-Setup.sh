@@ -11,5 +11,5 @@ echo -e "\e[100mStep 4/4 \e[44m Adding Bash Aliases to simplify starting and sto
 echo "alias instart='docker-compose -f $(pwd)/docker-compose.yml up -d && xdg-open http://localhost:8080/'" >> ~/.bashrc
 echo "alias instop='docker-compose -f $(pwd)/docker-compose.yml stop'" >> ~/.bashrc
 echo OK
-source ~/.bashrc
+. ~/.bashrc
 echo -e "\e[1mSetup finished! Next, close this terminal and open a new one. Run 'instart' to start InvoiceNinja. \nYour browser will automatically start. Wait 10 seconds and refresh the page. Have fun!\e[0m"
