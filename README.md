@@ -10,13 +10,12 @@ Benefits of this setup
 - **Security:** InvoiceNinja will run only on localhost without being accessible from any other machine.
 - **Usability:**
   - InvoiceNinja can be started and stopped when needed within milliseconds.
-  - InvoiceNinja will be able to send emails and invoices as long localhost is connected to the Internet.
   - Backups are as easy as copying one folder.
 
 
-Drawbacks
+The drawback
 ------------
-**The client portal of InvoiceNinja will not work** since it runs on localhost without being accessible from any other machine. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
+InvoiceNinja will even be able to send emails and invoices as long localhost is connected to the Internet. **Only the client portal of InvoiceNinja will not work** since it runs on localhost without being accessible from any other machine. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
 
 
 Prerequisites
