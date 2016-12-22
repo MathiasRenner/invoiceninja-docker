@@ -31,7 +31,7 @@ Easy Setup
 You can install everything with just the following command. *Note:* You want to run the command inside a folder where InvoiceNinja should be downloaded to.
 
 ```
-curl -s https://gist.githubusercontent.com/MathiasRenner/69e6bbb274e5e6a8b759cb7e21f20b9f/raw/8382bcd1417bc887f9270ee439d8d93171275541/install.sh | bash
+curl -s https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/Easy-Setup.sh | bash
 ```
 
 If you prefer a step-by-step installation, follow the [manual setup instructions](https://github.com/MathiasRenner/invoiceninja-docker/blob/master/MANUAL-SETUP.md).
