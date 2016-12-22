@@ -1,4 +1,4 @@
-# invoiceninja-docker for localhost
+# InvoiceNinja-Docker for high security and usability
 This project simplifies the usage of [InvoiceNinja](https://github.com/invoiceninja/invoiceninja) leveraging [Docker](http://docker.com/) while maintaining a high level of security.
 
 InvoiceNinja is a great tool for business owners to process invoices. However it's implemented as a webservice, which could expose clients' data to the Internet in case of security issues. Since security issues are not unlikely, this project avoids security problems by running InvoiceNinja only on localhost.
@@ -7,61 +7,32 @@ InvoiceNinja is a great tool for business owners to process invoices. However it
 
 Benefits of this setup
 -----------
-- InvoiceNinja will run only on localhost, and be accessible only from localhost.
-- InvoiceNinja can be started and stopped when needed within milliseconds.
-- InvoiceNinja will be able to send emails and invoices as long localhost is connected to the Internet.
-- Backups are as easy as copying one folder.
+- **Security:** InvoiceNinja will run only on localhost without being accessible from any other machine.
+- **Usability:**
+  - InvoiceNinja can be started and stopped when needed within milliseconds.
+  - InvoiceNinja will be able to send emails and invoices as long localhost is connected to the Internet.
+  - Backups are as easy as copying one folder.
 
 
 Drawbacks
 ------------
-- The client portal of InvoiceNinja will not work since it runs on localhost. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
+**The client portal of InvoiceNinja will not work** since it runs on localhost without being accessible from any other machine. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
 
 
 Prerequisites
 ---------------
-- Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6. Also make sure you have `git` installed.
+- Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6.
+- Make sure you have `git` installed.
 
 Easy Setup
 ---------------
+You can install everything with just the following command:
 
+```
+curl -s https://gist.githubusercontent.com/MathiasRenner/69e6bbb274e5e6a8b759cb7e21f20b9f/raw/91784ac3a1082dae83f9e5f6580645af63dc846d/install.sh | bash
+```
 
-
-Manual Setup
----------------
-- Clone this repo to your machine:
-
-  ```
-  git clone git@github.com:MathiasRenner/invoiceninja-docker.git
-  ```
-- Change into the cloned directory with
-
-  ```
-  cd invoiceninja-docker
-  ```
-
-- When this has been finished download the necessary files and start InvoiceNinja with
-
-  ```
-  docker-compose up -d
-  ```
-  If everything was successful, the output of the previous command looks similar to this:
-
-  ```
-  Creating invoiceninjadocker_db_1
-  Creating invoiceninjadocker_app_1
-  Creating invoiceninjadocker_web_1
-  ```
-
-- Now, open InvoiceNinja in Firefox at `http://localhost:8080/`. Congrats! Your local instance of InvoiceNinja is running!
-
-- Finally, run the following lines to simplify starting and stopping InvoiceNinja:
-
-  ```
-  echo "alias instart='docker-compose -f $(pwd)/docker-compose.yml up -d && xdg-open http://localhost:8080/'" >> ~/.bashrc
-  echo "alias instop='docker-compose -f $(pwd)/docker-compose.yml stop'" >> ~/.bashrc
-  source ~/.bashrc
-  ```
+If you prefer a step-by-step installation, follow the [manual setup instructions](https://github.com/MathiasRenner/invoiceninja-docker/MANUAL-SETUP.md).
 
 
 How to start and stop it
