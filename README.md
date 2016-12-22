@@ -3,10 +3,9 @@ This project simplifies the usage of [InvoiceNinja](https://github.com/invoiceni
 
 InvoiceNinja is a great tool for business owners to process invoices. However it's implemented as a webservice, which could expose clients' data to the Internet in case of security issues. Since security issues are not unlikely, this project avoids security problems by running InvoiceNinja only on localhost.
 
+This software has been successfully tested on Ubuntu. Other Linux based operating systems require adjustements to work fine.
+
 **Note that this is still beta quality and not for production use yet!**
-
-This has been successfully tested on Ubuntu.
-
 
 Benefits of this setup
 -----------
