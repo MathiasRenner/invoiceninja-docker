@@ -22,13 +22,12 @@ The only drawback of this setup
 InvoiceNinja will even be able to send emails and invoices as long localhost is connected to the Internet. **Only the client portal of InvoiceNinja will not work** since it runs on localhost without being accessible from any other machine. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
 
 
-Prerequisites
----------------
-- Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6.
-- Make sure you have `git` installed.
-
 Easy Setup
 ---------------
+Prerequisites:
+  - Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6.
+  - Make sure you have `git` installed.
+
 You can install everything with just the following command. *Note:* You want to run the command inside a folder where InvoiceNinja should be downloaded to.
 
 ```
