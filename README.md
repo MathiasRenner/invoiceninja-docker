@@ -14,9 +14,10 @@ Benefits of this setup
 - **Usability:**
   - InvoiceNinja can be started and stopped when needed within milliseconds.
   - Backups are as easy as copying one folder.
-
-
-The drawback
+- **Updates**: You can always update within a single command – it's safe and fast.
+ 
+ 
+The only drawback of this setup
 ------------
 InvoiceNinja will even be able to send emails and invoices as long localhost is connected to the Internet. **Only the client portal of InvoiceNinja will not work** since it runs on localhost without being accessible from any other machine. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
 
@@ -49,6 +50,15 @@ To simplify backup, I recommend to apply a `sudo chmod -R 777` on the `database`
 
 - **Backup**: All settings for InvoiceNinja are stored in the database, which resides in the folder `invoiceninja-docker/database`. If you copy this folder to a any different location, you have a backup.
 - **Restore**: The only way to restore all settings is to restore the folder `database` – which is easy and fast. The backup/restore options inside InvoiceNinja don't cover all settings.
+
+
+Update
+-------------
+To update, simply run
+```
+docker pull invoiceninja/invoiceninja
+```
+That's all! You can directly run ìnstart to go n working.
 
 
 Troublehooting
