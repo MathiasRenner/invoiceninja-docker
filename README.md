@@ -28,6 +28,7 @@ Easy Setup
 ---------------
 Prerequisites:
   - Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6.
+  - Make sure you can run `docker` commands without *sudo*. If you get an error like `Got permission denied` when running e.g. `docker ps`, [follow these instructions here](http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo).
   - Make sure you have `git` installed.
 
 You can install everything with just the following command. *Note:* You want to run the command inside a folder where InvoiceNinja should be downloaded to.
