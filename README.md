@@ -17,9 +17,11 @@ Benefits of this setup
 - **Updates**: You can always update within a single command – it's safe and fast.
  
  
-The only drawback of this setup
+Drawbacks of this setup
 ------------
-InvoiceNinja will even be able to send emails and invoices as long localhost is connected to the Internet. **Only the client portal of InvoiceNinja will not work** since it runs on localhost without being accessible from any other machine. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
+InvoiceNinja will even be able to send emails and (single) invoices as long as localhost is connected to the Internet. Still, there are two things that won't not work:
+  - The **client portal** of InvoiceNinja will not be accessible by clients, since it runs on localhost without being accessible from any other machine. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
+  - **Recurring invoices**, e.g. for monthly invoices for some maintenance contract, cannot be sent out regularly since InvoiceNinja is not constantly running as a daemon in this setup.
 
 
 Easy Setup
