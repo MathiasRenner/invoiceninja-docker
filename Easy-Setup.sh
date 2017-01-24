@@ -10,6 +10,7 @@ docker-compose pull
 echo -e "\e[100mStep 4/4 \e[44m Adding Bash Aliases to simplify starting and stopping...\e[0m"
 echo "alias instart='docker-compose -f $(pwd)/docker-compose.yml up -d && xdg-open http://localhost:8080/ >>/dev/null'" >> ~/.bashrc
 echo "alias instop='docker-compose -f $(pwd)/docker-compose.yml stop'" >> ~/.bashrc
+echo "alias inclean='echo Cleaning initiated... && docker-compose -f $(pwd)/docker-compose.yml down -d && docker-compose -f $(pwd)/docker-compose.yml up -d && echo Waiting 30 seconds for services to start up... && sleep 30 && xdg-open http://localhost:8080/ >>/dev/null && Clean up done.'" >> ~/.bashrc
 echo OK
 . ~/.bashrc
 echo -e "\e[1mSetup finished! Next, close this terminal and open a new one. Run 'instart' to start InvoiceNinja. \nYour browser will automatically start. Wait 10 seconds and refresh the page. Have fun!\e[0m"
