@@ -6,7 +6,6 @@ This project simplifies the usage of [InvoiceNinja](https://github.com/invoiceni
 
 The project has been successfully tested on Ubuntu. Other Linux based operating systems require adjustments to work fine.
 
-**Note that this is still beta quality and not for production use yet!**
 
 Benefits of this setup
 -----------
