@@ -1,10 +1,10 @@
 # Using InvoiceNinja with high security and usability on localhost
 
-InvoiceNinja is a great tool for business owners to process invoices. However it's implemented as a webservice, which could expose clients' data to the Internet in case of security issues. Since security issues are not unlikely, this project avoids security problems by running InvoiceNinja only on localhost.
+InvoiceNinja is a great tool for business owners to process invoices. However it's implemented as a web service, which could expose clients' data to the Internet in case of security issues. Since security issues are not unlikely, this project avoids security problems by running InvoiceNinja only on localhost.
 
 This project simplifies the usage of [InvoiceNinja](https://github.com/invoiceninja/invoiceninja) leveraging [Docker](http://docker.com/) while maintaining a high level of security.
 
-The project has been successfully tested on Ubuntu. Other Linux based operating systems require adjustements to work fine.
+The project has been successfully tested on Ubuntu. Other Linux based operating systems require adjustments to work fine.
 
 **Note that this is still beta quality and not for production use yet!**
 
