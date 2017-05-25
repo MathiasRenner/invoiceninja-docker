@@ -59,7 +59,7 @@ To update, simply run
 ```
 docker pull invoiceninja/invoiceninja
 ```
-That's all! You can directly run `instart` to go n working.
+That's all! You can now run `instart` and use InvoiceNinja in its latest version.
 
 
 Troublehooting
