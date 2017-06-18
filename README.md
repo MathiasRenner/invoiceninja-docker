@@ -47,10 +47,28 @@ Start & stop
 
 Backup & Restore
 ----------------
-To simplify backup, I recommend to apply a `sudo chmod -R 777` on the `database` folder within `invoiceninja-docker`. This folder is created after the first start of InvoiceNinja. Afterwards, backup and restore as follows:
+- **Backup**: All settings for InvoiceNinja are stored inside the folder **userdata**. If you copy this folder to a any different location, you have a backup. I recommend to zip/compress the folder additionally. Let's do it:
 
-- **Backup**: All settings for InvoiceNinja are stored in the database, which resides in the folder `invoiceninja-docker/database`. If you copy this folder to a any different location, you have a backup.
-- **Restore**: The only way to restore all settings is to restore the folder `database` – which is easy and fast. The backup/restore options inside InvoiceNinja don't cover all settings.
+  - If Invoiceninja is running, stop it by executing `instop`.
+  - With your terminal, navigate to your invoiceninja folder and run there:
+    ```
+    sudo tar cfvz DATE-invoiceninja-backup.tar.gz userdata/
+    ```
+    Then, you should have a new file `DATE-invoiceninja-backup.tar.gz`. This is your complete backup.
+    Note that the backup/restore options inside InvoiceNinja do not cover all your user data and settings. 
+  
+- **Restore**: 
+
+  - If Invoiceninja is running, stop it by executing `instop`.
+  - With your terminal, navigate to your invoiceninja folder and delete your existing userdata:
+    ```
+    sudo rm -rf userdata/
+    ```
+  - Copy your Backup (=folder "userdata" in a compressed/zipped version) into the invoiceninja folder and uncompress/unzip it here, such that there is a folder "userdata" next to the docker-compose file:
+    ```
+    sudo tar xfvz DATE-invoiceninja-backup.tar.gz
+    ```
+  - That's it! Start invoiceninja again to check if everything was restored correctly.
 
 
 Update
