@@ -9,7 +9,7 @@ read mailaddress
 echo "Type your email host address (e.g. mail.example.com) and then press [ENTER]:"
 read mailhost
 
-echo "Type your email username [ENTER]:"
+echo "Type your email username (often identical with your email address) [ENTER]:"
 read mailusername
 
 echo "Type your email password [ENTER]:"
@@ -18,6 +18,15 @@ read mailpassword
 echo "Type the name the email receiver should see as email sender [ENTER]:"
 read mailfromname
 
+
+echo -e "\e[100mStep 2/5 \e[44m Cloning repository...\e[0m"
+git clone https://github.com/MathiasRenner/invoiceninja-docker.git
+cd invoiceninja-docker
+echo OK
+
+
+echo -e "\e[100mStep 3/5 \e[44m Writing user config...\e[0m"
+
 sed -i -- "s/mail@example.com/$mailaddress/" docker-compose.yml
 sed -i -- "s/mail.service.host/$mailhost/" docker-compose.yml
 sed -i -- "s/username/$mailusername/" docker-compose.yml
@@ -25,15 +34,6 @@ sed -i -- "s/password/$mailpassword/" docker-compose.yml
 sed -i -- "s/fromname/$mailfromname/" docker-compose.yml
 
 echo OK. Configuration saved.
-
-
-echo -e "\e[100mStep 2/5 \e[44m Cloning repository...\e[0m"
-git clone https://github.com/MathiasRenner/invoiceninja-docker.git
-
-
-echo -e "\e[100mStep 3/5 \e[44m Changing into cloned repository...\e[0m"
-cd invoiceninja-docker
-echo OK
 
 
 echo -e "\e[100mStep 4/5 \e[44m Pulling neccessary Docker images...\e[0m"
