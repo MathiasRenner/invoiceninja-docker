@@ -1,7 +1,4 @@
 version: "2"
-volumes:
-  htdocs:
-    driver: local
 
 services:
   db:
@@ -10,26 +7,31 @@ services:
       MYSQL_DATABASE: ninja
       MYSQL_ROOT_PASSWORD: pwd
     volumes:
-     - ./database:/var/lib/mysql
+     - ./userdata/database:/var/lib/mysql
 
   app:
     image: invoiceninja/invoiceninja
-    links:
-      - db:mysql
     environment:
-      #APP_DEBUG: 1
+      APP_URL: http://localhost:8080
+      DB_HOST: db
       DB_USERNAME: root
       DB_PASSWORD: pwd
+      MAIL_DRIVER: smtp
+      MAIL_FROM_ADDRESS: mail@example.com
+      MAIL_HOST: mail.service.host
+      MAIL_USERNAME: username
+      MAIL_PASSWORD: password
+      MAIL_FROM_NAME: "fromname"
+      #APP_DEBUG: 1
     volumes:
-      - htdocs:/var/www/app/public
+      - ./userdata/htdocs:/var/www/app/public
+      - ./userdata/logo:/var/www/app/public/logo
 
   web:
     image: nginx:stable
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     volumes_from:
-      - app
-    links:
       - app
     ports:
       - "127.0.0.1:8080:80"
