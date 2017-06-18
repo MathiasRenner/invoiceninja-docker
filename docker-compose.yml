@@ -7,11 +7,10 @@ services:
       MYSQL_DATABASE: ninja
       MYSQL_ROOT_PASSWORD: pwd
     volumes:
-     - ./database:/var/lib/mysql
+     - .userdata/database:/var/lib/mysql
 
   app:
     image: invoiceninja/invoiceninja
-    env_file: .env
     environment:
       APP_URL: http://localhost:8080
       DB_HOST: db
@@ -25,8 +24,8 @@ services:
       MAIL_FROM_NAME: "fromname"
       #APP_DEBUG: 1
     volumes:
-      - ./appdata-htdocs:/var/www/app/public
-      - ./appdata-logo:/var/www/app/public/logo
+      - ./userdata/htdocs:/var/www/app/public
+      - ./userdata/logo:/var/www/app/public/logo
 
   web:
     image: nginx:stable
