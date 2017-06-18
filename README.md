@@ -47,11 +47,12 @@ Start & stop
 
 Backup & Restore
 ----------------
-- **Backup**: All settings for InvoiceNinja are stored inside the folder **userdata**. If you copy this folder to a any different location, you have a backup. I recommend to zip/compress the folder additionally. Let's do it:
+- **Backup**: All settings for InvoiceNinja are stored inside the folder **userdata** and in the **docker-compose.yml**. If you copy this folder to a any different location, you have a backup. I recommend to zip/compress the folder additionally. Let's do it:
 
   - If Invoiceninja is running, stop it by executing `instop`.
   - With your terminal, navigate to your invoiceninja folder and run there:
     ```
+    sudo cp docker-compose.yml userdata/
     sudo tar cfvz DATE-invoiceninja-backup.tar.gz userdata/
     ```
     Then, you should have a new file `DATE-invoiceninja-backup.tar.gz`. This is your complete backup.
@@ -67,6 +68,7 @@ Backup & Restore
   - Copy your Backup (=folder "userdata" in a compressed/zipped version) into the invoiceninja folder and uncompress/unzip it here, such that there is a folder "userdata" next to the docker-compose file:
     ```
     sudo tar xfvz DATE-invoiceninja-backup.tar.gz
+    sudo cp userdata/docker-compose.yml .
     ```
   - That's it! Start invoiceninja again to check if everything was restored correctly.
 
@@ -77,7 +79,7 @@ To update, simply run
 ```
 docker pull invoiceninja/invoiceninja
 ```
-That's all! You can now run `instart` and use InvoiceNinja in its latest version.
+That's all! Now run `instop` and `instart` and then enjoy InvoiceNinja in its latest version.
 
 
 Troublehooting
