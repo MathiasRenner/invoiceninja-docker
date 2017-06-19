@@ -33,7 +33,7 @@ sed -i -- "s/username/$mailusername/" docker-compose.yml
 sed -i -- "s/password/$mailpassword/" docker-compose.yml
 sed -i -- "s/fromname/$mailfromname/" docker-compose.yml
 
-echo OK. Configuration saved.
+echo Configuration written.
 
 
 echo -e "\e[100mStep 4/5 \e[44m Pulling neccessary Docker images...\e[0m"

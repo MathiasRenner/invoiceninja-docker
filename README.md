@@ -4,7 +4,7 @@ InvoiceNinja is a great tool for business owners to process invoices. However it
 
 This project simplifies the usage of [InvoiceNinja](https://github.com/invoiceninja/invoiceninja) leveraging [Docker](http://docker.com/) while maintaining a high level of security.
 
-The project has been successfully tested on Ubuntu. Other Linux based operating systems require adjustments to work fine.
+The project has been successfully tested on Ubuntu and Debian. Other Linux based operating systems might require adjustments to work fine.
 
 
 Benefits of this setup
