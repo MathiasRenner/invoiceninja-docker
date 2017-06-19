@@ -15,7 +15,7 @@ docker rmi $(docker image ls | grep invoiceninja | tr -s ' ' | cut -d ' ' -f 3)
 echo OK
 
 echo -e "\e[100mStep 3/4 \e[44m Removing invoiceninja folder...\e[0m"
-cd $(cat $HOMEDIR/.bashrc | grep instart |  grep -o -P '(?<=-f).*(?=docker-compose.yml)')
+cd $(cat ~/.bashrc | grep instart |  grep -o -P '(?<=-f).*(?=docker-compose.yml)')
 echo Sudo is required to move forward...
 sudo rm -rf invoiceninja-docker
 
