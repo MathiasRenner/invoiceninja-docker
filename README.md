@@ -82,6 +82,16 @@ docker pull invoiceninja/invoiceninja
 That's all! Now run `instop` and `instart` and then enjoy InvoiceNinja in its latest version.
 
 
+Deinstall
+--------------
+- With the terminal, navigate to somewhere outside of the invoiceninja folder
+- Run
+```
+curl -s https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/Deinstall.sh | bash
+```
+
+
+
 Troublehooting
 -------------
 - **Bad Gateway**: If you see a "Bad Gateway" in your browser instead of the InvoiceNinja interface, wait some seconds and try again. The service might need some more time to get up and running. If the error remains, start the clean up task that is also included in this project by simply running `inclean`. If the error still persists afterwards, run `docker rm -fv $(docker ps -aq) && instart`.  *Note* that this command removes all containers and volumes on your machine!
