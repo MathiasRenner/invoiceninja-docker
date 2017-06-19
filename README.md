@@ -14,8 +14,8 @@ Benefits of this setup
   - InvoiceNinja can be started and stopped when needed within milliseconds.
   - Backups are as easy as copying one folder.
 - **Updates**: You can always update within a single command – it's safe and fast.
- 
- 
+
+
 Drawbacks of this setup
 ------------
 InvoiceNinja will even be able to send emails and (single) invoices as long as localhost is connected to the Internet. Still, there are two things that won't not work:
@@ -33,7 +33,7 @@ Prerequisites:
 You can install everything with just the following command. *Note:* You want to run the command inside a folder where InvoiceNinja should be downloaded to.
 
 ```
-curl -s https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/Easy-Setup.sh | bash
+curl -s https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/Easy-Setup.sh -o Easy-Setup.sh && bash Easy-Setup.sh
 ```
 
 If you prefer a step-by-step installation, follow the [manual setup instructions](https://github.com/MathiasRenner/invoiceninja-docker/blob/master/MANUAL-SETUP.md).
@@ -56,9 +56,9 @@ Backup & Restore
     sudo tar cfvz DATE-invoiceninja-backup.tar.gz userdata/
     ```
     Then, you should have a new file `DATE-invoiceninja-backup.tar.gz`. This is your complete backup.
-    Note that the backup/restore options inside InvoiceNinja do not cover all your user data and settings. 
-  
-- **Restore**: 
+    Note that the backup/restore options inside InvoiceNinja do not cover all your user data and settings.
+
+- **Restore**:
 
   - If Invoiceninja is running, stop it by executing `instop`.
   - With your terminal, navigate to your invoiceninja folder and delete your existing userdata:
