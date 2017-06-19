@@ -87,7 +87,7 @@ Deinstall
 - With the terminal, navigate to somewhere outside of the invoiceninja folder
 - Run
 ```
-curl -s https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/Deinstall.sh | bash
+curl -s https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/Deinstall.sh -o Deinstall.sh | bash Deinstall.sh
 ```
 
 
