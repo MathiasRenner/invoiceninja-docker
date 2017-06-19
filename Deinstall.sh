@@ -16,6 +16,7 @@ echo OK
 
 echo -e "\e[100mStep 3/4 \e[44m Removing invoiceninja folder...\e[0m"
 cd $(cat ~/.bashrc | grep instart |  grep -o -P '(?<=-f).*(?=docker-compose.yml)')
+cd ..
 echo Sudo is required to move forward...
 sudo rm -rf invoiceninja-docker
 
