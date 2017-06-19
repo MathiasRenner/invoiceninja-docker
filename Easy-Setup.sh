@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo -e "\e[100mStep 1/4 \e[44m Configuration setup...\e[0m"
+echo -e "\e[100mStep 1/4 \e[44m Collecting user settings...\e[0m"
 
 echo "Type your email adress (e.g. mail@example.com) [ENTER]:"
 read mailaddress
@@ -15,7 +15,7 @@ read mailusername
 echo "Type your email password [ENTER]:"
 read mailpassword
 
-echo "Type the name the email receiver should see as email sender [ENTER]:"
+echo "Type the name the email receiver should see as email sender (often full personal or company name) [ENTER]:"
 read mailfromname
 
 
