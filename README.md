@@ -13,7 +13,6 @@ Benefits of this setup
 - **Usability:**
   - InvoiceNinja can be started and stopped when needed within milliseconds.
   - Backups are as easy as copying one folder.
-- **Updates**: You can always update within a single command – it's safe and fast.
 
 
 Drawbacks of this setup
