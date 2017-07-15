@@ -76,7 +76,9 @@ Backup & Restore
 
 Update
 -------------
-To update, simply run
+To do a safe update, go to the [release page](https://github.com/MathiasRenner/invoiceninja-docker/releases) and follow the instructions in the sections "How to upgrade from previous version" – for all versions newer than the one you use right now. You can always backup, deinstall and reinstall the "whole" thing, which might be faster than updating it from release to release.
+
+You can always try to do the update as follows, but this is not very safe (it might break your invoice ninja, but never deletes any of your data):
 ```
 docker pull invoiceninja/invoiceninja
 ```
