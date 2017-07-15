@@ -92,9 +92,10 @@ curl -s https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/mast
 ```
 
 
-
 Troublehooting
 -------------
 - **Bad Gateway**: If you see a "Bad Gateway" in your browser instead of the InvoiceNinja interface, wait some seconds and try again. The service might need some more time to get up and running. If the error remains, start the clean up task that is also included in this project by simply running `inclean`. If the error still persists afterwards, run `docker rm -fv $(docker ps -aq) && instart`.  *Note* that this command removes all containers and volumes on your machine!
 - **Cannot connect to the Docker daemon.** Make sure you have added your Linux user to the Docker group as described in the Docker docs. On Ubuntu, this issue is fixed by `sudo usermod -aG docker $USER`
 - **Whoops, looks like something went wrong.** This error might result from an docker image update without getting the latest version of this repository, e.g. the latest docker-compose file. In this case, try to identify the changes (in commits) between your version and the version from the repo here ([check the realease page for changes](https://github.com/MathiasRenner/invoiceninja-docker/releases)), or backup, deinstall and install invoiceninja again following the instructions above.
+
+
