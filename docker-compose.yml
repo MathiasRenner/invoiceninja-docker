@@ -22,7 +22,7 @@ services:
       MAIL_USERNAME: username
       MAIL_PASSWORD: password
       MAIL_FROM_NAME: "fromname"
-      APP_CIPHER=AES-256-CBC
+      APP_CIPHER: AES-256-CBC
       APP_KEY: SomeRandomStringSomeRandomString
       #APP_DEBUG: 1
     volumes:
