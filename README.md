@@ -1,6 +1,6 @@
-# Using InvoiceNinja with high security and usability on localhost
+# InvoiceNinja for local machine only
 
-InvoiceNinja is a great tool for business owners to process invoices. However it's implemented as a web service, which could expose clients' data to the Internet in case of security issues. Since security issues are not unlikely, this project avoids security problems by running InvoiceNinja only on localhost.
+InvoiceNinja is a great tool for business owners to process invoices. However it's implemented as a web service, which could expose clients' data to the Internet in case of security issues. Since security issues are not unlikely, this project here avoids security problems by running InvoiceNinja only on localhost.
 
 This project simplifies the usage of [InvoiceNinja](https://github.com/invoiceninja/invoiceninja) leveraging [Docker](http://docker.com/) while maintaining a high level of security.
 
@@ -17,9 +17,8 @@ Benefits of this setup
 
 Drawbacks of this setup
 ------------
-InvoiceNinja will even be able to send emails and (single) invoices as long as localhost is connected to the Internet. Still, there are two things that won't not work:
-  - The **client portal** of InvoiceNinja will not be accessible by clients, since it runs on localhost without being accessible from any other machine. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
-  - **Recurring invoices**, e.g. for monthly invoices for some maintenance contract, cannot be sent out regularly since InvoiceNinja is not constantly running as a daemon in this setup.
+- The **client portal** of InvoiceNinja will not be accessible by clients, since it runs on localhost without being accessible from any other machine. In the portal, clients can see their invoices and download them. This is more secure than sending invoices via email, but a compromise of this setup.
+- **Recurring invoices**, e.g. for monthly invoices for some maintenance contract, cannot be sent out regularly since InvoiceNinja is not constantly running as a daemon.
 
 
 Easy Setup
@@ -29,7 +28,8 @@ Prerequisites:
   - Make sure you can run `docker` commands without *sudo*. If you get an error like `permission denied` when running e.g. `docker ps`, [follow these instructions here](http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo).
   - Make sure you have `git` installed.
 
-You can install everything with just the following command. *Note:* You want to run the command inside a folder where InvoiceNinja should be downloaded to.
+Install:
+  - You can install everything with just the following command. *Note:* You want to run the command inside a folder where InvoiceNinja should be downloaded to.
 
 
 ```
@@ -95,8 +95,8 @@ curl -s https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/mast
 
 Troublehooting
 -------------
-- **Bad Gateway**: If you see a "Bad Gateway" in your browser instead of the InvoiceNinja interface, wait some seconds and try again. The service might need some more time to get up and running. If the error remains, start the clean up task that is also included in this project by simply running `inclean`. If the error still persists afterwards, run `docker rm -fv $(docker ps -aq) && instart`.  *Note* that this command removes all containers and volumes on your machine!
-- **Cannot connect to the Docker daemon.** Make sure you have added your Linux user to the Docker group as described in the Docker docs. On Ubuntu, this issue is fixed by `sudo usermod -aG docker $USER`
-- **Whoops, looks like something went wrong.** This error might result from an docker image update without getting the latest version of this repository, e.g. the latest docker-compose file. In this case, try to identify the changes (in commits) between your version and the version from the repo here ([check the realease page for changes](https://github.com/MathiasRenner/invoiceninja-docker/releases)), or backup, deinstall and install invoiceninja again following the instructions above.
+- **"Bad Gateway"**: If you see a "Bad Gateway" in your browser instead of the InvoiceNinja interface, wait some seconds and try again. The service might need some more time to get up and running. If the error remains, start the clean up task that is also included in this project by simply running `inclean`. If the error still persists afterwards, run `docker rm -fv $(docker ps -aq) && instart`.  *Note* that this command removes all containers and volumes on your machine!
+- **"Cannot connect to the Docker daemon"**: Make sure you have added your Linux user to the Docker group as described in the Docker docs. On Ubuntu, this issue is fixed by `sudo usermod -aG docker $USER`
+- **"Whoops, looks like something went wrong"**: This error might result from an docker image update without getting the latest version of this repository, e.g. the latest docker-compose file. In this case, try to identify the changes (in commits) between your version and the version from the repo here ([check the realease page for changes](https://github.com/MathiasRenner/invoiceninja-docker/releases)), or backup, deinstall and install invoiceninja again following the instructions above.
 
 
