@@ -23,14 +23,13 @@ Drawbacks of this setup
 
 Easy Setup
 ---------------
-Prerequisites:
+Check prerequisites:
   - Setup `docker` and `docker-compose` following Docker's official docs. Make sure you have `docker-compose` version >= 1.6.
   - Make sure you can run `docker` commands without *sudo*. If you get an error like `permission denied` when running e.g. `docker ps`, [follow these instructions here](http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo).
   - Make sure you have `git` installed.
 
 Install:
-  - You can install everything with just the following command. *Note:* You want to run the command inside a folder where InvoiceNinja should be downloaded to.
-
+  - Go to a folder, in which InvoiceNinja shall be downlaoded to (a new folder will be created). Then run:
 
 ```
 curl -s https://raw.githubusercontent.com/MathiasRenner/invoiceninja-docker/master/Easy-Setup.sh -o Easy-Setup.sh && bash Easy-Setup.sh
