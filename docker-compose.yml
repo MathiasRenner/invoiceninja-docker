@@ -10,7 +10,7 @@ services:
      - ./userdata/database:/var/lib/mysql
 
   app:
-    image: invoiceninja/invoiceninja:3.9.2
+    image: invoiceninja/invoiceninja:4.1.0
     environment:
       APP_URL: http://localhost:8080
       DB_HOST: db
