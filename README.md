@@ -98,4 +98,30 @@ Troublehooting
 - **"Cannot connect to the Docker daemon"**: Make sure you have added your Linux user to the Docker group as described in the Docker docs. On Ubuntu, this issue is fixed by `sudo usermod -aG docker $USER`
 - **"Whoops, looks like something went wrong"**: This error might result from an docker image update without getting the latest version of this repository, e.g. the latest docker-compose file. In this case, try to identify the changes (in commits) between your version and the version from the repo here ([check the realease page for changes](https://github.com/MathiasRenner/invoiceninja-docker/releases)), or backup, deinstall and install invoiceninja again following the instructions above.
 
+Support this project
+-------------
+If you want this project to get better, support me with a few cents:
 
+<a href="https://liberapay.com/Bitleaf/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+
+
+License
+-----------
+
+![](https://www.gnu.org/graphics/gplv3-127x51.png)
+
+The project is licensed unter the GPLv3.
+
+Copyright (C) Mathias Renner
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+See <http://www.gnu.org/licenses/> fore more information.
