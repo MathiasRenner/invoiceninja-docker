@@ -2,7 +2,7 @@ version: "2"
 
 services:
   db:
-    image: mariadb:10.1.19
+    image: mariadb:10.4.2
     environment:
       MYSQL_DATABASE: ninja
       MYSQL_ROOT_PASSWORD: pwd
@@ -10,7 +10,7 @@ services:
      - ./userdata/database:/var/lib/mysql
 
   app:
-    image: invoiceninja/invoiceninja:4.1.0
+    image: invoiceninja/invoiceninja:4.5.9
     environment:
       APP_URL: http://localhost:8080
       DB_HOST: db
