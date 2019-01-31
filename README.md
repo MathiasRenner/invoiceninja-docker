@@ -40,7 +40,7 @@ If you prefer a step-by-step installation, follow the [manual setup instructions
 
 Start & stop
 --------------
-- To start InvoiceNinja, just run `instart`
+- To start InvoiceNinja, just run `instart` from a terminal.
 - To stop it: `instop`
 
 
@@ -97,7 +97,7 @@ Troublehooting
 - **"Bad Gateway"**: If you see a "Bad Gateway" in your browser instead of the InvoiceNinja interface, wait some seconds and try again. The service might need some more time to get up and running. If the error remains, start the clean up task that is also included in this project by simply running `inclean`. If the error still persists afterwards, run `docker rm -fv $(docker ps -aq) && instart`.  *Note* that this command removes all containers and volumes on your machine!
 - **"Cannot connect to the Docker daemon"**: Make sure you have added your Linux user to the Docker group as described in the Docker docs. On Ubuntu, this issue is fixed by `sudo usermod -aG docker $USER`
 - **"Whoops, looks like something went wrong"**: This error might result from an docker image update without getting the latest version of this repository, e.g. the latest docker-compose file. In this case, try to identify the changes (in commits) between your version and the version from the repo here ([check the realease page for changes](https://github.com/MathiasRenner/invoiceninja-docker/releases)), or backup, deinstall and install invoiceninja again following the instructions above.
-- **Error: Update your API Key...**: You can ignore this since you use InvoiceNinja locally. To fix this, go to the folder with the `docker-compose.yml` file and run: `docker-compose exec app php artisan ninja:update-key`. That's it.
+- **"Error: Update your API Key..."**: You can ignore this since you use InvoiceNinja locally. But fixing it is also easy: Go to the folder with the `docker-compose.yml` file and run: `docker-compose exec app php artisan ninja:update-key`. That's it.
 
 Support this project
 -------------
